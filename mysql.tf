@@ -16,7 +16,7 @@ resource "aws_db_instance" "mysql" {
     vpc_security_group_ids    = [aws_security_group.rds_sg.id, aws_security_group.ecs_sg.id]
     skip_final_snapshot       = true
     // final_snapshot_identifier = "worker-final"
-    publicly_accessible       = true
+    // publicly_accessible       = true
 }
 
 // ecr_repository_worker_endpoint = 934611408633.dkr.ecr.ap-southeast-1.amazonaws.com/student-api

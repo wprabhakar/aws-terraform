@@ -1,12 +1,12 @@
 resource "aws_alb" "main" {
-  name            = "student-api-load-balancer"
+  name            = "${var.ecs_cluster}-lb"
   subnets         = aws_subnet.pub_subnet.*.id
-  security_groups = [aws_security_group.ecs_sg.id]
+  security_groups = [aws_security_group.lb_sg.id]
 }
 
 resource "aws_alb_target_group" "student_api" {
-  name        = "student-api-target-group"
-  port        = 8080
+  name        = "${var.ecs_cluster}-tg"
+  port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.vpc.id
   // target_type = "ip"

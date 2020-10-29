@@ -1,14 +1,14 @@
 [
   {
     "essential": true,
-    "memory": 512,
-    "name": "student-api",
+    "memory": 100,
+    "name": "${CONTAINER_NAME}",
     "networkMode": "awsvpc", 
     "executionRoleArn": "arn:aws:iam::REPLACE_ACCOUNT:role/ecsTaskExecutionRole",
     "cpu": 256,
     "portMappings": [
       {
-        "hostPort": 8080,
+        "hostPort": 0,
         "containerPort": 8080,
         "protocol": "tcp"
       }
